@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>See More / See Less Example</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleText() {
+            const moreText = document.getElementById("moreText");
+            const seeMoreBtn = document.getElementById("seeMoreBtn");
+            const seeLessBtn = document.getElementById("seeLessBtn");
+
+            if (moreText.classList.contains("hidden")) {
+                moreText.classList.remove("hidden");
+                seeMoreBtn.classList.add("hidden");
+                seeLessBtn.classList.remove("hidden");
+            } else {
+                moreText.classList.add("hidden");
+                seeMoreBtn.classList.remove("hidden");
+                seeLessBtn.classList.add("hidden");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>See More / See Less Example</h1>
+    <p id="shortText">This is the initial part of the message that is always visible.</p>
+    <p id="moreText" class="hidden">This is the additional part of the message that is shown when you click "See More". It contains more detailed information and can be hidden again by clicking "See Less".</p>
+    <button id="seeMoreBtn" onclick="toggleText()">See More</button>
+    <button id="seeLessBtn" class="hidden" onclick="toggleText()">See Less</button>
+</body>
+</html>
